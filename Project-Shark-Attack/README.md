@@ -5,8 +5,9 @@ Objetivos do projeto:
 * Extrair insights;
 * Responder perguntas: 
 1) Qual o país com maior número de ataques?
-2) O número de ataques aumenta com a população?
-3) Qual o país com maior número de ataques por habitantes?
+2) Dos top 5 países com maior número de ataques, onde há maior crescimento anual?
+3) O número de ataques aumenta com a população?
+4) Qual o país com maior número de ataques por habitantes?
 
 ## Getting Started
 
@@ -34,6 +35,9 @@ Os 4 países com os maiores números de ataques registrados desde 2010 até 2018
 * África do Sul, com 63
 * Bahamas, com 34
 * Brasil, com 19
+
+### Dos top 5 países com maior número de ataques, onde há maior crescimento anual?
+Em Bahamas.
 
 ### O número de ataques aumenta com a população? 
 
