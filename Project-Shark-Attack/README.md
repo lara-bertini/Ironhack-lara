@@ -1,13 +1,11 @@
 ﻿# Shark Attack
 
-Objetivos do projeto:
-* Limpeza dos dados;
-* Extrair insights;
-* Responder perguntas: 
-1) Qual o país com maior número de ataques?
-2) Dos top 5 países com maior número de ataques, onde há maior crescimento anual?
-3) O número de ataques aumenta com a população?
-4) Qual o país com maior número de ataques por habitantes?
+### Objetivos do projeto
+
+1) Difundir conhecimento sobre áreas com maior NÚMERO DE ATAQUES para que as pessoas possam se prevenir.
+2) Entender dentre os países com maior número de ataques, onde há maior CRESCIMENTO ANUAL.
+3) Algumas matérias falam que o número de ataques AUMENTA com a POPULAÇÃO, ou mesmo com MUDANÇAS CLIMÁTICAS. Será?
+4) bonus: qual o país com maior NÚMERO DE ATAQUES POR HABITANTES?
 
 ## Getting Started
 
