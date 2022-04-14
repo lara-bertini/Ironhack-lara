@@ -1,0 +1,12 @@
+SELECT
+	osd.seller_id AS seller_id,
+	ooid.price AS preco,
+	ooid.freight_value AS frete,
+	osd.seller_state AS estado_seller,
+	ocd.customer_state AS estado_cliente,
+	opd.product_category_name AS category
+FROM ironhack.olist_db.olist_order_items_dataset AS ooid
+JOIN ironhack.olist_db.olist_products_dataset opd ON (ooid.product_id = opd.product_id)
+JOIN ironhack.olist_db.olist_sellers_dataset osd ON (ooid.seller_id = osd.seller_id)
+JOIN ironhack.olist_db.olist_orders_dataset ood ON (ooid.order_id = ood.order_id)
+JOIN ironhack.olist_db.olist_customers_dataset ocd ON (ood.customer_id = ocd.customer_id);

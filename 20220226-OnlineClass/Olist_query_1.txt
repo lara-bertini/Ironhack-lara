@@ -1,0 +1,30 @@
+SELECT
+	tb_1.customer_id,
+	tb_1.order_id,
+	tb_1.dias_atraso,
+	tb_1.status_entrega,
+	tb_customer.customer_state AS destiny_state,
+	tb_items.seller_id,
+	tb_sellers.seller_state AS origin_state
+FROM
+	(SELECT
+		orders_tb.customer_id as customer_id,
+		orders_tb.order_id as order_id,
+		DATE_PART('DAYS', orders_tb.order_estimated_delivery_date - orders_tb.order_delivered_customer_date) AS dias_atraso,
+		CASE
+			WHEN DATE_PART('DAYS', orders_tb.order_estimated_delivery_date - orders_tb.order_delivered_customer_date) >= 0 THEN 'ONTIME'
+			WHEN DATE_PART('DAYS', orders_tb.order_estimated_delivery_date - orders_tb.order_delivered_customer_date) < 0 THEN 'DELAYED'
+			ELSE 'NOT DELIVERED'
+		END AS status_entrega
+	FROM
+		ironhack.olist_db.olist_orders_dataset AS orders_tb) AS tb_1
+LEFT JOIN ironhack.olist_db.olist_customers_dataset AS tb_customer
+ON tb_1.customer_id = tb_customer.customer_id
+LEFT JOIN ironhack.olist_db.olist_order_items_dataset AS tb_items
+ON tb_1.order_id = tb_items.order_id
+LEFT JOIN ironhack.olist_db.olist_sellers_dataset AS tb_sellers
+ON tb_items.seller_id = tb_sellers.seller_id;
+
+
+
+
