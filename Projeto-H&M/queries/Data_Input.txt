@@ -1,0 +1,17 @@
+DROP SCHEMA IF EXISTS H&M_db CASCADE;
+CREATE SCHEMA H&M_db;
+
+-- CARREGAR TABELA TRANSACTIONS
+DROP TABLE IF EXISTS H&M_Ironhack.H&M_db.transactions_dataset CASCADE; 
+
+CREATE TABLE H&M_Ironhack.H&M_db.transactions_dataset (
+	transaction_date TIMESTAMP,
+	customer_id VARCHAR PRIMARY KEY,
+	article_id VARCHAR,
+	price NUMERIC,
+	sales_channel_id VARCHAR
+);
+
+COPY H&M_Ironhack.H&M_db.transactions_dataset
+FROM 'E:\Dbeaver\Datasets\H&M_Ironhack\transactions_train.csv'
+HEADER DELIMITER ',' CSV;
